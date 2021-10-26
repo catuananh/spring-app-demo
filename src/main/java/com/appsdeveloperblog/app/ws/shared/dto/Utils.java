@@ -26,6 +26,15 @@ public class Utils {
         return tokenExpirationDate.before(todayDate);
     }
 
+    public static String generatePasswordResetToken(String userId) {
+        String token = Jwts.builder()
+                .setSubject(userId)
+                .setExpiration(new Date(System.currentTimeMillis() + SecurityContants.EXPIRATION_TIME))
+                .signWith(SignatureAlgorithm.HS512, SecurityContants.getTokenSecret())
+                .compact();
+        return token;
+    }
+
     public String generateUserId(int length){
         return generateRandomString(length);
     }
@@ -47,7 +56,7 @@ public class Utils {
     public String generateEmailVerificationToken(String userId) {
         String token = Jwts.builder()
                 .setSubject(userId)
-                .setExpiration(new Date(System.currentTimeMillis() + SecurityContants.EXPIRATION_TIME))
+                .setExpiration(new Date(System.currentTimeMillis() + SecurityContants.PASSWORD_RESET_EXPIRATION_TIME))
                 .signWith(SignatureAlgorithm.HS512, SecurityContants.getTokenSecret())
                 .compact();
         return token;
