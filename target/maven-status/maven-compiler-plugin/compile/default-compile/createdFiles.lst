@@ -1,6 +1,7 @@
 com\appsdeveloperblog\app\ws\exceptions\AppExceptionHandler.class
 com\appsdeveloperblog\app\ws\io\repositories\UserRepository.class
 com\appsdeveloperblog\app\ws\shared\dto\AddressDTO.class
+com\appsdeveloperblog\app\ws\io\repositories\PasswordResetTokenRepository.class
 com\appsdeveloperblog\app\ws\shared\dto\Utils.class
 com\appsdeveloperblog\app\ws\controller\UserController$1.class
 com\appsdeveloperblog\app\ws\exceptions\UserServiceException.class
@@ -17,6 +18,7 @@ com\appsdeveloperblog\app\ws\ui\model\response\ErrorMessages.class
 com\appsdeveloperblog\app\ws\controller\RequestOperationStatus.class
 com\appsdeveloperblog\app\ws\security\AuthorizationFilter.class
 com\appsdeveloperblog\app\ws\MobileAppWsApplication.class
+com\appsdeveloperblog\app\ws\io\entity\PasswordResetTokenEntity.class
 com\appsdeveloperblog\app\ws\SpringApplicationContext.class
 com\appsdeveloperblog\app\ws\ui\model\response\OperationStatusModel.class
 com\appsdeveloperblog\app\ws\ui\model\response\UserRest.class
@@ -25,7 +27,9 @@ com\appsdeveloperblog\app\ws\service\impl\UserServiceImpl.class
 com\appsdeveloperblog\app\ws\service\UserService.class
 com\appsdeveloperblog\app\ws\controller\RequestOperationName.class
 com\appsdeveloperblog\app\ws\controller\UserController.class
+com\appsdeveloperblog\app\ws\ui\model\request\PasswordResetModel.class
 com\appsdeveloperblog\app\ws\ui\model\request\UserLoginRequestModel.class
+com\appsdeveloperblog\app\ws\ui\model\request\PasswordResetRequestModel.class
 com\appsdeveloperblog\app\ws\io\entity\AddressEntity.class
 com\appsdeveloperblog\app\ws\ui\model\response\ErrorMessage.class
 com\appsdeveloperblog\app\ws\shared\dto\UserDto.class

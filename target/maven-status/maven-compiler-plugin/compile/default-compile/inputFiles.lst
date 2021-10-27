@@ -11,6 +11,7 @@ E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\io\reposi
 E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\controller\UserController.java
 E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\service\UserService.java
 E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\service\AddressService.java
+E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\ui\model\request\PasswordResetModel.java
 E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\shared\dto\UserDto.java
 E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\controller\RequestOperationName.java
 E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\security\AppProperties.java
@@ -23,9 +24,12 @@ E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\exception
 E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\ui\model\request\AddressRequestModel.java
 E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\io\entity\AddressEntity.java
 E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\SpringApplicationContext.java
+E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\io\entity\PasswordResetTokenEntity.java
 E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\ui\model\response\UserRest.java
 E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\shared\dto\Utils.java
+E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\ui\model\request\PasswordResetRequestModel.java
 E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\exceptions\AppExceptionHandler.java
 E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\ui\model\response\ErrorMessages.java
 E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\ui\model\response\AddressRest.java
+E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\io\repositories\PasswordResetTokenRepository.java
 E:\mobile-app\mobile-app-ws\src\main\java\com\appsdeveloperblog\app\ws\ui\model\response\OperationStatusModel.java
