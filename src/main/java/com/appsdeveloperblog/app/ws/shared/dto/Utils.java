@@ -2,6 +2,7 @@ package com.appsdeveloperblog.app.ws.shared.dto;
 
 import com.appsdeveloperblog.app.ws.security.SecurityContants;
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.stereotype.Component;
@@ -17,13 +18,23 @@ public class Utils {
     private final String ALPHABET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
     public static boolean hasTokenExpired(String token) {
-        Claims claims = Jwts.parser()
-                .setSigningKey(SecurityContants.getTokenSecret())
-                .parseClaimsJws(token).getBody();
-        Date tokenExpirationDate = claims.getExpiration();
-        Date todayDate = new Date();
 
-        return tokenExpirationDate.before(todayDate);
+        boolean returnValue = true;
+
+        try {
+            Claims claims = Jwts.parser()
+                    .setSigningKey(SecurityContants.getTokenSecret())
+                    .parseClaimsJws(token).getBody();
+            Date tokenExpirationDate = claims.getExpiration();
+            Date todayDate = new Date();
+
+            returnValue = tokenExpirationDate.before(todayDate);
+        } catch (ExpiredJwtException ex)
+        {
+            returnValue = true;
+        }
+
+        return returnValue;
     }
 
     public static String generatePasswordResetToken(String userId) {
