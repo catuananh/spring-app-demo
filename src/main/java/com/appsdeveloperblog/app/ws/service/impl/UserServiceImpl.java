@@ -1,6 +1,7 @@
 package com.appsdeveloperblog.app.ws.service.impl;
 
 import com.appsdeveloperblog.app.ws.exceptions.UserServiceException;
+import com.appsdeveloperblog.app.ws.io.entity.AddressEntity;
 import com.appsdeveloperblog.app.ws.io.entity.PasswordResetTokenEntity;
 import com.appsdeveloperblog.app.ws.io.repositories.PasswordResetTokenRepository;
 import com.appsdeveloperblog.app.ws.io.repositories.UserRepository;
@@ -76,16 +77,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto getUser(String email) {
+    //public UserDto getUser(String email) {
+    public UserDto getUser(String email) throws UsernameNotFoundException {
         UserEntity userEntity = userRepository.findByEmail(email);
 
         if(userEntity == null) throw new UsernameNotFoundException(email);
 
-        //UserDto returnValue = new UserDto();
-        //BeanUtils.copyProperties(userEntity, returnValue);
+        UserDto returnValue = new UserDto();
+        BeanUtils.copyProperties(userEntity, returnValue);
 
-        ModelMapper modelMapper = new ModelMapper();
-        UserDto returnValue = modelMapper.map(userEntity, UserDto.class);
+        //ModelMapper modelMapper = new ModelMapper();
+        //UserDto returnValue = modelMapper.map(userEntity, UserDto.class);
 
         return returnValue;
     }

@@ -1,6 +1,8 @@
 package com.appsdeveloperblog.app.ws.io.entity;
 
 import com.appsdeveloperblog.app.ws.shared.dto.UserDto;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -33,7 +35,7 @@ public class AddressEntity implements Serializable {
     private String type;
 
     @ManyToOne
-    @JoinColumn(name="user_id")
+    @JoinColumn(name="users_id")
     private UserEntity userDetails;
 
     public long getId() {
