@@ -4,7 +4,6 @@ import com.appsdeveloperblog.app.ws.exceptions.UserServiceException;
 import com.appsdeveloperblog.app.ws.io.entity.AddressEntity;
 import com.appsdeveloperblog.app.ws.io.entity.UserEntity;
 import com.appsdeveloperblog.app.ws.io.repositories.UserRepository;
-import com.appsdeveloperblog.app.ws.service.AddressService;
 import com.appsdeveloperblog.app.ws.shared.dto.AddressDTO;
 import com.appsdeveloperblog.app.ws.shared.dto.UserDto;
 import com.appsdeveloperblog.app.ws.shared.dto.Utils;

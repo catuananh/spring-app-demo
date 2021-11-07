@@ -1,6 +1,5 @@
 package com.appsdeveloperblog.app.ws.controller;
 
-import com.appsdeveloperblog.app.ws.service.AddressService;
 import com.appsdeveloperblog.app.ws.service.impl.UserServiceImpl;
 import com.appsdeveloperblog.app.ws.shared.dto.AddressDTO;
 import com.appsdeveloperblog.app.ws.shared.dto.UserDto;

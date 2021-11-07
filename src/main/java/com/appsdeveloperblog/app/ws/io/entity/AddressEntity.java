@@ -1,9 +1,5 @@
 package com.appsdeveloperblog.app.ws.io.entity;
 
-import com.appsdeveloperblog.app.ws.shared.dto.UserDto;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-
 import javax.persistence.*;
 import java.io.Serializable;
 

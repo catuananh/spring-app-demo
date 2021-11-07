@@ -1,7 +1,7 @@
 package com.appsdeveloperblog.app.ws.service.impl;
 
 import com.appsdeveloperblog.app.ws.exceptions.UserServiceException;
-import com.appsdeveloperblog.app.ws.io.entity.AddressEntity;
+
 import com.appsdeveloperblog.app.ws.io.entity.PasswordResetTokenEntity;
 import com.appsdeveloperblog.app.ws.io.repositories.PasswordResetTokenRepository;
 import com.appsdeveloperblog.app.ws.io.repositories.UserRepository;
@@ -11,14 +11,13 @@ import com.appsdeveloperblog.app.ws.shared.dto.AddressDTO;
 import com.appsdeveloperblog.app.ws.shared.dto.UserDto;
 import com.appsdeveloperblog.app.ws.shared.dto.Utils;
 import com.appsdeveloperblog.app.ws.ui.model.response.ErrorMessages;
-import com.appsdeveloperblog.app.ws.ui.model.response.UserRest;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.security.core.GrantedAuthority;
+
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -196,7 +195,7 @@ public class UserServiceImpl implements UserService {
             return returnValue;
         }
 
-        String token = new Utils().generatePasswordResetToken(userEntity.getUserId());
+		String token = Utils.generatePasswordResetToken(userEntity.getUserId());
 
         PasswordResetTokenEntity passwordResetTokenEntity = new PasswordResetTokenEntity();
         passwordResetTokenEntity.setToken(token);

@@ -2,7 +2,6 @@ package com.appsdeveloperblog.app.ws.io.repositories;
 
 import com.appsdeveloperblog.app.ws.io.entity.AddressEntity;
 import com.appsdeveloperblog.app.ws.io.entity.UserEntity;
-import com.appsdeveloperblog.app.ws.shared.dto.AddressDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -176,8 +175,48 @@ class UserRepositoryTest extends Object {
     @Test
     final void testUpdateUserEmailVerification(){
 
-        boolean newEmailVerification = false;
+        boolean newEmailVerification = true;
         userRepository.updateUserEmailVerificationStatus(newEmailVerification, "1231sada");
+
+        UserEntity storedUserDetails = userRepository.findByUserId("1231sada");
+
+        boolean storedEmailVerificationStatus = storedUserDetails.getEmailVerificationStatus();
+
+        assertTrue(storedEmailVerificationStatus == newEmailVerification);
+    }
+
+    @Test
+    final void testFindUserEntityByUserId(){
+        String userId="1231sada";
+
+        UserEntity userEntity = userRepository.findUserEntityByUserId(userId);
+
+        assertNotNull(userEntity);
+        assertTrue(userEntity.getUserId().equals(userId));
+    }
+
+    @Test
+    final void testGetUserEntityFullNameById(){
+        String userId="1231sada";
+        List<Object[]> records = userRepository.getUserEntityFullNameById(userId);
+
+        assertNotNull(records);
+        assertTrue(records.size()==1);
+
+        Object[] userDetails = records.get(0);
+
+        String firstName = String.valueOf(userDetails[0]);
+        String lastName = String.valueOf(userDetails[1]);
+
+        assertNotNull(firstName);
+        assertNotNull(lastName);
+    }
+
+    @Test
+    final void testUpdateUserEntityEmailVerification(){
+
+        boolean newEmailVerification = true;
+        userRepository.updateUserEntityEmailVerificationStatus(newEmailVerification, "1231sada");
 
         UserEntity storedUserDetails = userRepository.findByUserId("1231sada");
 
